@@ -33,10 +33,9 @@
                                 'hide_empty' => false,
                             ));
                             foreach ($categories as $category) {
-                                $cat_count = get_category($category->term_id);
                             ?>
                                 <li><a href="<?= get_category_link($category->term_id); ?>">
-                                <?php echo $category->name; ?><span><?= $cat_count->count; ?>
+                                <?php echo $category->name; ?><span><?= $category->count; ?>
                                 </span></a></li>
                             <?php
                             }
