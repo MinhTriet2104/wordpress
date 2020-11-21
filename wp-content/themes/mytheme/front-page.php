@@ -11,7 +11,7 @@
         ?>
     </div>
 
-    <div class="row mt-1">
+    <div class="two-sub row mt-1">
         <div class="col-md-6">
             <?=
                 do_shortcode('[sp_news category="18" limit="1" grid="1" order="DESC" orderby="date" pagination_type=""]'); 
