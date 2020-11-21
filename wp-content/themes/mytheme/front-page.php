@@ -3,14 +3,20 @@
     get_header();
 ?>
 <!-- phần nội dung trang chủ -->
-<main id="main-content" class="container">
+<div class="container">
+
+    <main>
+        <?=
+            do_shortcode('[recent_post_slider design="design-2" post_type="news" recent_post_carousel speed="2000"]');
+        ?>
+    </main>
 
     <div class="row mt-1">
 
         <!-- phần thứ 1, slider  -->
         <section class="col-md-8">
             <?=
-                do_shortcode('[sp_news design="design-2" limit="10" grid="3" show_content="true" show_category_name="true" show_date="false" content_words_limit="30"]'); 
+                do_shortcode('[sp_news limit="10" grid="list" show_content="true" show_category_name="true" show_date="true" content_words_limit="30"]'); 
             ?>
         </section>
 
@@ -22,7 +28,7 @@
 
     </div>
 
-</main>
+</div>
 
 <?php
     // include footer

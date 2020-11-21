@@ -24,6 +24,8 @@ apply_filters( 'sp_news_registered_post_type_args', $news_args );
 	<link type="text/css" rel="stylesheet" href="<?= get_template_directory_uri() ?>/assets/css/blocks.editor.build.css" />
 	<link type="text/css" rel="stylesheet" href="<?= get_template_directory_uri() ?>/assets/css/sp-news-admin.css" />
 	<link type="text/css" rel="stylesheet" href="<?= get_template_directory_uri() ?>/assets/css/sp-news-public.css" />
+	<link type="text/css" rel="stylesheet" href="<?= get_template_directory_uri() ?>/assets/css/recent-post-style.css" />
+	<link type="text/css" rel="stylesheet" href="<?= get_template_directory_uri() ?>/assets/css/slick.css" />
 
 	<!-- Custom stlylesheet -->
 	<link type="text/css" rel="stylesheet" href="<?= get_template_directory_uri() ?>/assets/css/style.css" />
@@ -52,7 +54,7 @@ apply_filters( 'sp_news_registered_post_type_args', $news_args );
 						$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 					?>
 					<div class="nav-logo">
-						<a href="" class="logo"><img src="<?= $image[0] ?>" alt=""></a>
+						<a href="<?= get_home_url(); ?>" class="logo"><img src="<?= $image[0] ?>" alt=""></a>
 					</div>
 					<!-- /logo -->
 
@@ -92,7 +94,7 @@ apply_filters( 'sp_news_registered_post_type_args', $news_args );
 							</div>
 						</li>
                         <?php
-                        $categories = get_terms('category', array(
+                        $categories = get_terms('news-category', array(
                             'hide_empty' => false,
                         ));
 						foreach ($categories as $category) { 

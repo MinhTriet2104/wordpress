@@ -78,3 +78,18 @@ function mytheme_custom_logo_setup()
 add_action('after_setup_theme', 'mytheme_custom_logo_setup');
 
 add_theme_support( 'post-thumbnails' );
+
+add_action('wp_loaded','maybe_prerun_shortcodes');
+function maybe_prerun_shortcodes() {
+    if (is_page()) {
+        global $post; 
+        if (has_shortcode($post->post_content,'embed_post')) {
+            $content = apply_filters('the_content',$post->post_content);
+        }
+    }
+}
+
+function sreub_enqueue_styles() {
+	wp_enqueue_style( 'sreubmainstyle', plugin_dir_url( __FILE__ ). 'sreubmainstyle.css' );
+}
+add_action( 'wp_enqueue_scripts', 'sreub_enqueue_styles' );
