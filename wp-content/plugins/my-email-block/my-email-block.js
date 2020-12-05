@@ -54,10 +54,12 @@ wp.blocks.registerBlockType("brad/border-box", {
     );
   },
   save: function (props) {
-    return wp.element.createElement(
-      "h3",
-      { style: { border: "none" } },
-      props.attributes.content
-    );
+    if (!props.attributes.isError && props.attributes.content !== '') {
+      return wp.element.createElement(
+        "h3",
+        null,
+        props.attributes.content
+      );
+    }
   },
 });
