@@ -1,132 +1,60 @@
-<?php
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-apply_filters( 'sp_news_registered_post_type_args', $news_args );
+<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
+	<head profile="http://gmpg.org/xfn/11">
+		<meta http-equiv="Content-Type" content="<?php bloginfo( 'html_type' ); ?>; charset=<?php bloginfo( 'charset' ); ?>" />
+		<?php if ( current_theme_supports( 'bp-default-responsive' ) ) : ?><meta name="viewport" content="width=device-width, initial-scale=1.0" /><?php endif; ?>
+		<title><?php wp_title( '|', true, 'right' ); bloginfo( 'name' ); ?></title>
+		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php bloginfo('title'); ?></title>
-    <!-- Custom stlylesheet -->
-	<title>Callie HTML Template</title>
+		<?php bp_head(); ?>
+		<?php wp_head(); ?>
 
-	<!-- Google font -->
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CMuli:400,700" rel="stylesheet">
+	</head>
 
-	<!-- Bootstrap -->
-	<link type="text/css" rel="stylesheet" href="<?= get_template_directory_uri() ?>/assets/css/bootstrap.min.css" />
+	<body <?php body_class(); ?> id="bp-default">
 
-	<!-- Font Awesome Icon -->
-	<link rel="stylesheet" href="<?= get_template_directory_uri() ?>/assets/css/font-awesome.min.css">
+		<?php do_action( 'bp_before_header' ); ?>
 
-	<link type="text/css" rel="stylesheet" href="<?= get_template_directory_uri() ?>/assets/css/blocks.editor.build.css" />
-	<link type="text/css" rel="stylesheet" href="<?= get_template_directory_uri() ?>/assets/css/sp-news-admin.css" />
-	<link type="text/css" rel="stylesheet" href="<?= get_template_directory_uri() ?>/assets/css/sp-news-public.css" />
-	<link type="text/css" rel="stylesheet" href="<?= get_template_directory_uri() ?>/assets/css/recent-post-style.css" />
-	<link type="text/css" rel="stylesheet" href="<?= get_template_directory_uri() ?>/assets/css/slick.css" />
-
-	<!-- Custom stlylesheet -->
-	<link type="text/css" rel="stylesheet" href="<?= get_template_directory_uri() ?>/assets/css/style.css" />
-    
-</head>
-<body>
-    <!-- HEADER -->
-	<header id="header">
-		<!-- NAV -->
-		<div id="nav">
-			<!-- Top Nav -->
-			<div id="nav-top">
-				<div class="container">
-					<!-- social -->
-					<ul class="nav-social">
-						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-						<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-						<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-					</ul>
-					<!-- /social -->
-
-					<!-- logo -->
-					<?php 
-						$custom_logo_id = get_theme_mod( 'custom_logo' );
-						$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-					?>
-					<div class="nav-logo">
-						<a href="<?= get_home_url(); ?>" class="logo"><img src="<?= $image[0] ?>" alt=""></a>
-					</div>
-					<!-- /logo -->
-
-					<!-- search & aside toggle -->
-					<div class="nav-btns">
-						<button class="aside-btn"><i class="fa fa-bars"></i></button>
-						<button class="search-btn"><i class="fa fa-search"></i></button>
-						<div id="nav-search">
-						<form method="get" action="/callie/search.php" >
-								<input class="input" name="keyword" placeholder="Enter your search...">
-							</form>
-							<button class="nav-close search-close">
-								<span></span>
-							</button>
+		<div id="header">
+			<div id="search-bar" role="search">
+				<div class="padder">
+						<!-- logo -->
+						<?php 
+							$custom_logo_id = get_theme_mod( 'custom_logo' );
+							$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+						?>
+						<div class="nav-logo">
+							<a href="<?= get_home_url(); ?>" class="logo"><img src="<?= $image[0] ?>" alt=""></a>
 						</div>
-					</div>
-					<!-- /search & aside toggle -->
-				</div>
-			</div>
-			<!-- /Top Nav -->
+						<!-- /logo -->
 
-			<!-- Main Nav -->
-			<div id="nav-bottom">
-				<div class="container">
-					<!-- nav -->
-					<ul class="nav-menu">
-						<li class="has-dropdown">
-							<a href="index.php">Trang chủ</a>
-							<div class="dropdown">
-								<div class="dropdown-body">
-									<ul class="dropdown-list">
-										<!-- Trang rieng cua tung danh muc -->																	
-										<li><a href="about.html">About Us</a></li>
-										<li><a href="contact.html">Contacts</a></li>
-									</ul>
-								</div>
-							</div>
-						</li>
-                        <?php
-                        $categories = get_terms('news-category', array(
-                            'hide_empty' => false,
-                        ));
-						foreach ($categories as $category) { 
-						?>
-						<li><a href="<?= get_category_link($category->term_id); ?>"><?php echo $category->name; ?></a></li>
-						<?php
-						}
-						?>
-					</ul>
-					<!-- /nav -->
-				</div>
-			</div>
-			<!-- /Main Nav -->
+						<form action="<?php echo bp_search_form_action(); ?>" method="post" id="search-form">
+							<label for="search-terms" class="accessibly-hidden"><?php _e( 'Search for:', 'buddypress' ); ?></label>
+							<input type="text" id="search-terms" name="search-terms" value="<?php echo isset( $_REQUEST['s'] ) ? esc_attr( $_REQUEST['s'] ) : ''; ?>" />
 
-			<!-- Aside Nav -->
-			<div id="nav-aside">
-				<ul class="nav-aside-menu">
-					<li><a href="index.php">Home</a></li>
-					<li class="has-dropdown"><a>Categories</a>
-						<ul class="dropdown">
-            			
-						</ul>
-					</li>
-					<li><a href="about.html">About Us</a></li>
-					<li><a href="contact.html">Contacts</a></li>
-					<li><a href="#">Advertise</a></li>
-				</ul>
-				<button class="nav-close nav-aside-close"><span></span></button>
+							<?php echo bp_search_form_type_select(); ?>
+
+							<input type="submit" name="search-submit" id="search-submit" value="<?php esc_attr_e( 'Search', 'buddypress' ); ?>" />
+
+							<?php wp_nonce_field( 'bp_search_form' ); ?>
+
+						</form><!-- #search-form -->
+
+				<?php do_action( 'bp_search_login_bar' ); ?>
+
+				</div><!-- .padder -->
+			</div><!-- #search-bar -->
+
+			<div id="navigation" role="navigation">
+				<?php wp_nav_menu( array( 'container' => false, 'menu_id' => 'nav', 'theme_location' => 'primary', 'fallback_cb' => 'bp_dtheme_main_nav' ) ); ?>
 			</div>
-			<!-- /Aside Nav -->
-		</div>
-		<!-- /NAV -->
-	</header>
-	<!-- /HEADER -->
-                        
+
+			<?php do_action( 'bp_header' ); ?>
+
+		</div><!-- #header -->
+
+		<?php do_action( 'bp_after_header'     ); ?>
+		<?php do_action( 'bp_before_container' ); ?>
+
+		<div id="container">
