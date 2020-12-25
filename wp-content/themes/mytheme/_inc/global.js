@@ -31,8 +31,8 @@ jq(document).ready( function() {
 		});
 
 		$whats_new.animate({
-			height:'50px'
-		});
+      height: "80px",
+    });
 
 		jq.scrollTo( $whats_new, 500, {
 			offset:-125,
@@ -50,8 +50,8 @@ jq(document).ready( function() {
 			height:'40px'
 		});
 		jq("form#whats-new-form textarea").animate({
-			height:'50px'
-		});
+      height: "80px",
+    });
 		jq("#aw-whats-new-submit").prop("disabled", false);
 
 		var $whats_new_form = jq("form#whats-new-form");
@@ -68,8 +68,8 @@ jq(document).ready( function() {
 				height:'40px'
 			});
 			jq("form#whats-new-form textarea").animate({
-				height:'20px'
-			});
+        height: "40px",
+      });
 			jq("#aw-whats-new-submit").prop("disabled", true);
 		}
 	});
@@ -158,8 +158,8 @@ jq(document).ready( function() {
 				height:'0px'
 			});
 			jq("form#whats-new-form textarea").animate({
-				height:'20px'
-			});
+        height: "40px",
+      });
 			jq("#aw-whats-new-submit").prop("disabled", true).removeClass('loading');
 		});
 
@@ -1325,6 +1325,11 @@ jq(document).ready( function() {
 			} );
 		});
 	});
+
+	jq("select").addClass("custom-select");
+
+  jq("#content").addClass("col-md-9");
+  jq("#sidebar").addClass("col-md-3");
 });
 
 /* Setup activity scope and filter based on the current cookie settings. */

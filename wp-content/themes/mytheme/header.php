@@ -7,9 +7,11 @@
 		<title><?php wp_title( '|', true, 'right' ); bloginfo( 'name' ); ?></title>
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
+		
 		<?php bp_head(); ?>
 		<?php wp_head(); ?>
-
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	
 	</head>
 
 	<body <?php body_class(); ?> id="bp-default">
@@ -17,7 +19,7 @@
 		<?php do_action( 'bp_before_header' ); ?>
 
 		<div id="header">
-			<div id="search-bar" role="search">
+			<div id="search-bar" role="search" class="container">
 				<div class="padder">
 						<!-- logo -->
 						<?php 
@@ -35,7 +37,7 @@
 
 							<?php echo bp_search_form_type_select(); ?>
 
-							<input type="submit" name="search-submit" id="search-submit" value="<?php esc_attr_e( 'Search', 'buddypress' ); ?>" />
+							<button type="submit" name="search-submit" id="search-submit" class="btn btn-sm btn-primary"><?php esc_attr_e( 'Search', 'buddypress' ); ?></button>
 
 							<?php wp_nonce_field( 'bp_search_form' ); ?>
 
@@ -46,7 +48,7 @@
 				</div><!-- .padder -->
 			</div><!-- #search-bar -->
 
-			<div id="navigation" role="navigation">
+			<div id="navigation" class="container" role="navigation">
 				<?php wp_nav_menu( array( 'container' => false, 'menu_id' => 'nav', 'theme_location' => 'primary', 'fallback_cb' => 'bp_dtheme_main_nav' ) ); ?>
 			</div>
 
@@ -57,4 +59,5 @@
 		<?php do_action( 'bp_after_header'     ); ?>
 		<?php do_action( 'bp_before_container' ); ?>
 
-		<div id="container">
+		<div class="container">
+			<div class="row">
