@@ -1,14 +1,3 @@
-<?php
-
-/**
- * BuddyPress - Users Profile
- *
- * @package BuddyPress
- * @subpackage bp-default
- */
-
-?>
-
 <div class="item-list-tabs no-ajax" id="subnav" role="navigation">
 	<ul>
 		<?php bp_get_options_nav(); ?>

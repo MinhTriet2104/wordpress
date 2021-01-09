@@ -1,13 +1,4 @@
-<?php
-
-/**
- * Template Name: BuddyPress - Activity Directory
- *
- * @package BuddyPress
- * @subpackage Theme
- */
-
-get_header( 'buddypress' ); ?>
+<?php get_header( 'buddypress' ); ?>
 
 	<?php do_action( 'bp_before_directory_activity_page' ); ?>
 

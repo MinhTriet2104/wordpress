@@ -1,16 +1,3 @@
-<?php
-
-/**
- * BuddyPress - Groups Loop
- *
- * Querystring is set via AJAX in _inc/ajax.php - bp_dtheme_object_filter()
- *
- * @package BuddyPress
- * @subpackage bp-default
- */
-
-?>
-
 <?php do_action( 'bp_before_groups_loop' ); ?>
 
 <?php if ( bp_has_groups( bp_ajax_querystring( 'groups' ) ) ) : ?>

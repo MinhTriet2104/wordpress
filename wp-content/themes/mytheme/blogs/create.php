@@ -1,13 +1,4 @@
-<?php
-
-/**
- * BuddyPress - Create Blog
- *
- * @package BuddyPress
- * @subpackage bp-default
- */
-
-get_header( 'buddypress' ); ?>
+<?php get_header( 'buddypress' ); ?>
 
 	<?php do_action( 'bp_before_directory_blogs_content' ); ?>
 

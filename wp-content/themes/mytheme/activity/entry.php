@@ -1,17 +1,3 @@
-<?php
-
-/**
- * BuddyPress - Activity Stream (Single Item)
- *
- * This template is used by activity-loop.php and AJAX functions to show
- * each activity.
- *
- * @package BuddyPress
- * @subpackage bp-default
- */
-
-?>
-
 <?php do_action( 'bp_before_activity_entry' ); ?>
 
 <li class="<?php bp_activity_css_class(); ?>" id="activity-<?php bp_activity_id(); ?>">

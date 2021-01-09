@@ -1,14 +1,3 @@
-<?php
-
-/**
- * BuddyPress - Forums Directory
- *
- * @package BuddyPress
- * @subpackage bp-default
- */
-
-?>
-
 <?php get_header( 'buddypress' ); ?>
 
 	<?php do_action( 'bp_before_directory_forums_page' ); ?>

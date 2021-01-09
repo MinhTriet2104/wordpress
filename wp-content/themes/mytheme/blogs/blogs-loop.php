@@ -1,16 +1,3 @@
-<?php
-
-/**
- * BuddyPress - Blogs Loop
- *
- * Querystring is set via AJAX in _inc/ajax.php - bp_dtheme_object_filter()
- *
- * @package BuddyPress
- * @subpackage bp-default
- */
-
-?>
-
 <?php do_action( 'bp_before_blogs_loop' ); ?>
 
 <?php if ( bp_has_blogs( bp_ajax_querystring( 'blogs' ) ) ) : ?>

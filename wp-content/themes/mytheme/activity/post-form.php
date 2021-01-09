@@ -1,14 +1,3 @@
-<?php
-
-/**
- * BuddyPress - Activity Post Form
- *
- * @package BuddyPress
- * @subpackage bp-default
- */
-
-?>
-
 <form action="<?php bp_activity_post_form_action(); ?>" method="post" id="whats-new-form" name="whats-new-form" role="complementary">
 
 	<?php do_action( 'bp_before_activity_post_form' ); ?>

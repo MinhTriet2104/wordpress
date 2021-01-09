@@ -1,13 +1,4 @@
-<?php
-
-/**
- * BuddyPress - Members Directory
- *
- * @package BuddyPress
- * @subpackage bp-default
- */
-
-get_header( 'buddypress' ); ?>
+<?php get_header( 'buddypress' ); ?>
 
 	<?php do_action( 'bp_before_directory_members_page' ); ?>
 

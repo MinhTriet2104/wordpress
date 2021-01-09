@@ -1,14 +1,3 @@
-<?php
-
-/**
- * BuddyPress - Users Notifications
- *
- * @package BuddyPress
- * @subpackage bp-legacy
- */
-
-?>
-
 <div class="item-list-tabs no-ajax" id="subnav" role="navigation">
 	<ul>
 		<?php bp_get_options_nav(); ?>

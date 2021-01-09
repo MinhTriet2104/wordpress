@@ -1,14 +1,3 @@
-<?php
-
-/**
- * BuddyPress - Users Settings
- *
- * @package BuddyPress
- * @subpackage bp-default
- */
-
-?>
-
 <div class="item-list-tabs no-ajax" id="subnav" role="navigation">
 	<ul>
 		<?php if ( bp_core_can_edit_settings() ) : ?>

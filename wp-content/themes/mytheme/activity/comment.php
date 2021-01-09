@@ -1,17 +1,3 @@
-<?php
-
-/**
- * BuddyPress - Activity Stream Comment
- *
- * This template is used by bp_activity_comments() functions to show
- * each activity.
- *
- * @package BuddyPress
- * @subpackage bp-default
- */
-
-?>
-
 <?php do_action( 'bp_before_activity_comment' ); ?>
 
 <li id="acomment-<?php bp_activity_comment_id(); ?>">

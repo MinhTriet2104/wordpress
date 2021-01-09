@@ -1,13 +1,4 @@
-<?php
-
-/**
- * BuddyPress - Users Home
- *
- * @package BuddyPress
- * @subpackage bp-default
- */
-
-get_header( 'buddypress' ); ?>
+<?php get_header( 'buddypress' ); ?>
 
 	<div id="content">
 		<div class="padder">
