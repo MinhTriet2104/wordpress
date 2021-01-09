@@ -193,21 +193,6 @@ add_action( 'wp_enqueue_scripts', 'bp_dtheme_enqueue_scripts' );
 endif;
 
 if ( !function_exists( 'bp_dtheme_enqueue_styles' ) ) :
-/**
- * Enqueue theme CSS safely
- *
- * For maximum flexibility, BuddyPress Default's stylesheet is enqueued, using wp_enqueue_style().
- * If you're building a child theme of bp-default, your stylesheet will also be enqueued,
- * automatically, as dependent on bp-default's CSS. For this reason, bp-default child themes are
- * not recommended to include bp-default's stylesheet using @import.
- *
- * If you would prefer to use @import, or would like to change the way in which stylesheets are
- * enqueued, you can override bp_dtheme_enqueue_styles() in your theme's functions.php file.
- *
- * @see http://codex.wordpress.org/Function_Reference/wp_enqueue_style
- * @see http://codex.buddypress.org/releases/1-5-developer-and-designer-information/
- * @since BuddyPress (1.5)
- */
 function bp_dtheme_enqueue_styles() {
 
 	// Register our main stylesheet

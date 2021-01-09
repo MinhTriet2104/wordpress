@@ -1,10 +1,5 @@
 <?php
-	/**
-	 * The footer widget area is triggered if any of the areas
-	 * have widgets.
-	 *
-	 * If none of the sidebars have widgets, bail early.
-	 */
+	
 	if (   ! is_active_sidebar( 'first-footer-widget-area'  )
 		&& ! is_active_sidebar( 'second-footer-widget-area' )
 		&& ! is_active_sidebar( 'third-footer-widget-area'  )

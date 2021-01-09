@@ -1,29 +1,7 @@
 <?php
-/**
- * AJAX Functions
- *
- * All of these functions enhance the responsiveness of the user interface in
- * the default theme by adding AJAX functionality.
- *
- * For more information on how the custom AJAX functions work, see
- * http://codex.wordpress.org/AJAX_in_Plugins.
- *
- * @package BuddyPress
- * @since BuddyPress (1.2)
- * @subpackage BP-Default
- */
 
-// Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-/**
- * Register AJAX handlers for BP Default theme functionality.
- *
- * This function is registered to the after_setup_theme hook with priority 20 as
- * this file is included in a function hooked to after_setup_theme at priority 10.
- *
- * @since BuddyPress (1.6)
- */
 function bp_dtheme_register_actions() {
 	$actions = array(
 		// Directory filters

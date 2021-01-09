@@ -1,15 +1,4 @@
-<?php
-/*
- * Template Name: One column, no sidebar
- *
- * A custom page template without sidebar.
- *
- * @package BuddyPress
- * @subpackage BP_Default
- * @since BuddyPress (1.5)
- */
-
-get_header(); ?>
+<?php get_header(); ?>
 
 	<div id="content">
 		<div class="padder one-column">
