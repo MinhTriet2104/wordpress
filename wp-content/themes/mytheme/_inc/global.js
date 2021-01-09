@@ -1329,7 +1329,8 @@ jq(document).ready( function() {
 	jq("select").addClass("custom-select");
 
   jq("#content").addClass("col-md-9");
-  jq("#sidebar").addClass("col-md-3");
+	jq("#sidebar").addClass("col-md-3");
+	jq("input[type=submit]").addClass("btn btn-primary");
 });
 
 /* Setup activity scope and filter based on the current cookie settings. */

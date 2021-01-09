@@ -11,7 +11,7 @@
 		<?php bp_head(); ?>
 		<?php wp_head(); ?>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	
+
 	</head>
 
 	<body <?php body_class(); ?> id="bp-default">
@@ -59,5 +59,9 @@
 		<?php do_action( 'bp_after_header'     ); ?>
 		<?php do_action( 'bp_before_container' ); ?>
 
+		<div class="pyro">
+			<div class="before"></div>
+			<div class="after"></div>
+		</div>
 		<div class="container">
 			<div class="row">
